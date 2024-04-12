@@ -24,10 +24,10 @@
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [18888],
-	"portsAttributes": {
-		"18888": { "label": "Aspire Dashboard"}
-	},
+	// "forwardPorts": [18888],
+	// "portsAttributes": {
+	// 	"18888": { "label": "Aspire Dashboard"}
+	// },
 
 	"onCreateCommand": "",
 	"postCreateCommand": "/bin/bash -c .devcontainer/post-create.sh",
