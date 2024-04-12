@@ -1,0 +1,50 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/dotnet
+{
+	"name": "C# (.NET)",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/dotnet:dev-8.0",
+	
+	"features": {
+		"ghcr.io/devcontainers/features/dotnet:2": {
+			"version": "lts"
+		},
+		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+			"version": "latest",
+			"helm": "latest",
+			"minikube": "none"
+		},
+		"ghcr.io/devcontainers/features/azure-cli:1": {
+			"installBicep": true,
+			"version": "latest"
+		},
+		"ghcr.io/azure/azure-dev/azd:0": {
+			"version": "stable"
+		}
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [18888],
+	"portsAttributes": {
+		"18888": { "label": "Aspire Dashboard"}
+	},
+
+	"onCreateCommand": "",
+	"postCreateCommand": "/bin/bash -c .devcontainer/post-create.sh",
+	"postStartCommand": "",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-dotnettools.csdevkit",
+				"mindaro.mindaro",
+				"ms-kubernetes-tools.vscode-kubernetes-tools",
+				"ms-vscode.vscode-node-azure-pack"
+			]
+		}
+	},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
